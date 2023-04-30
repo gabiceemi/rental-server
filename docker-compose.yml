@@ -1,10 +1,34 @@
-version: "3.7"
+version: "3.9"
 
-services: 
+services:
+  database:
+    image: postgres
+    container_name: database
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=rental
+      - POSTGRES_DB=rental
+    volumes:
+      - pgdata:/data/postgres
+
+
   app:
     build: .
     container_name: rental
-    ports:
+    restart: always
+    ports: 
       - 3333:3333
-    volumes:
+      - 9229:9229
+    volumes: 
       - .:/usr/app
+    links: 
+      - database
+    depends_on:
+      - database
+
+volumes:
+  pgdata:
+    driver: local

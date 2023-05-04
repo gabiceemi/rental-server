@@ -24,6 +24,7 @@ services:
       - 9229:9229
     volumes: 
       - .:/usr/app
+      - /usr/app/node_modules/bcrypt/
     links: 
       - database
     depends_on:

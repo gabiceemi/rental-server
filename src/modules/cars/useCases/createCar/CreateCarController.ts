@@ -1,9 +1,10 @@
-import { container } from 'tsyringe';
+import { container, injectable } from 'tsyringe';
 
 import { Request, Response } from "express";
 
 import { CreateCarUseCase } from "./CreateCarUseCase";
 
+@injectable()
 class CreateCarController {
     async handle (request: Request, response: Response): Promise<Response> {
         const {

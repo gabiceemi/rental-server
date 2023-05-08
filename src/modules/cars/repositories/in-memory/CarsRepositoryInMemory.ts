@@ -5,10 +5,11 @@ import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 class CarsRepositoryInMemory implements ICarsRepository {
     cars: Car[] = [];
 
-    async create({ name, description, daily_rate, license_plate, fine_amount, brand, category_id }: ICreateCarDTO): Promise<Car> {
+    async create({id, name, description, daily_rate, license_plate, fine_amount, brand, category_id }: ICreateCarDTO): Promise<Car> {
         const car = new Car();
 
         Object.assign(car, {
+            id,
             name, 
             description, 
             daily_rate, 
@@ -45,6 +46,10 @@ class CarsRepositoryInMemory implements ICarsRepository {
         });
 
         return cars;
+    }
+
+    async findById(id: string): Promise<Car> {
+        return this.cars.find(car => car.id === id);
     }
 
 }

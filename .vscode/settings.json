@@ -1,7 +1,10 @@
 {
     "cSpell.words": [
+        "dtos",
         "middlewares",
-        "tsyringe"
+        "speficication",
+        "tsyringe",
+        "typeorm"
     ],
     "editor.formatOnSave": true,
     "[javascript]": {

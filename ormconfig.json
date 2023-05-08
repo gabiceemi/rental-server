@@ -5,7 +5,7 @@
     "username": "docker",
     "password": "rental",
     "database": "rental",
-    "migrations": ["./src/database/migrations/*.ts"],
+    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
     "entities": ["./src/modules/**/entities/*.ts"],
     "cli": {
         "migrationsDir": "./src/database/migrations"

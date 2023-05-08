@@ -10,7 +10,7 @@ import swaggerFile from '../../../swagger.json';
 
 import { router } from './routes';
 
-import "@shared/infra/database";
+import "@shared/infra/typeorm";
 
 import "@shared/container";
 import { AppError } from '@shared/errors/AppError';

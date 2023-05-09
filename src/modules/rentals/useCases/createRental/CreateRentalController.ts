@@ -14,8 +14,8 @@ class CreateRentalController {
             user_id: id,
             expected_return_date
         });
-
-        return response.sendStatus(201).json(rental);
+        console.log(rental);
+        return response.status(201).json(rental);
     }
 }
 

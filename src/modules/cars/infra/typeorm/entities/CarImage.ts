@@ -2,7 +2,7 @@ import { v4 as uuidV4 } from 'uuid';
 
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 
-@Entity("cars_image")
+@Entity("cars_images")
 class CarImage {
     @PrimaryColumn()
     id: string;

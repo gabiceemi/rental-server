@@ -13,6 +13,7 @@ import { router } from './routes';
 import createConnection from "@shared/infra/typeorm";
 
 import "@shared/container";
+
 import { AppError } from '@shared/errors/AppError';
 
 createConnection();

@@ -7,7 +7,7 @@ import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTok
 
 import { AppError } from "@shared/errors/AppError";
 
-import { DayjsDateProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDateProvider";
+import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 
 interface IPayload {
     sub: string;
@@ -20,7 +20,7 @@ class RefreshTokenUseCase {
         @inject("UsersTokensRepository")
         private usersTokensRepository: IUsersTokensRepository,
         @inject("DayjsDateProvider")
-        private dateProvider: DayjsDateProvider
+        private dateProvider: IDateProvider
     ) {}
 
     async execute(token: string) {

@@ -8,8 +8,8 @@ import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepositor
 
 import { AppError } from "@shared/errors/AppError";
 import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
+import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import auth from "@config/auth";
-import { DayjsDateProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDateProvider";
 
 interface IRequest {
     email: string;
@@ -33,7 +33,7 @@ class AuthenticateUserUseCase {
         @inject("UsersTokensRepository")
         private usersTokensRepository: IUsersTokensRepository,
         @inject("DayjsDateProvider")
-        private dateProvider: DayjsDateProvider
+        private dateProvider: IDateProvider
     ) {}
 
     async execute({ email, password }: IRequest): Promise<IResponse> {

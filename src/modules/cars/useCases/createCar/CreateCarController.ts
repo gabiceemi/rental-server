@@ -1,4 +1,4 @@
-import { container, injectable } from 'tsyringe';
+import { container, injectable } from "tsyringe";
 
 import { Request, Response } from "express";
 

@@ -1,20 +1,20 @@
-import 'reflect-metadata';
+import "reflect-metadata";
 
-import express, { NextFunction, Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from "express";
 
 import "express-async-errors";
 
-import swaggerUi from 'swagger-ui-express';
+import swaggerUi from "swagger-ui-express";
 
-import swaggerFile from '../../../swagger.json';
+import swaggerFile from "../../../swagger.json";
 
-import { router } from './routes';
+import { router } from "./routes";
 
 import createConnection from "@shared/infra/typeorm";
 
 import "@shared/container";
 
-import { AppError } from '@shared/errors/AppError';
+import { AppError } from "@shared/errors/AppError";
 
 createConnection();
 
